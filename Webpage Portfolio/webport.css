@@ -269,6 +269,7 @@ section {
 
 .projects h2 {
     padding-top: 8rem;
+    margin-left: .8rem;
     font-size: 2.8rem;
     font-weight: 700;
 }
@@ -277,6 +278,7 @@ section {
     font-weight: bold;
     font-size: 1rem;
     margin-top: 0px;
+    margin-left: .8rem;
 }
 
 .description {
