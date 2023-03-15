@@ -36,8 +36,6 @@ header.classList.toggle('sticky', window.scrollY > 100);
   navbar.classList.remove('active')
 };
 
-
-
 // Show and Hide Section
 const toggleButton = document.querySelector('#toggle-button');
 const hiddenText = document.querySelector('#hidden-text');
@@ -48,5 +46,27 @@ toggleButton.addEventListener('click', () => {
   } else {
     hiddenText.style.display = 'none';
   }
+});
+
+// Send Email Function
+function sendEmail(name, email, message) {
+  Email.send({
+    SecureToken: "C973D7AD-F097-4B95-91F4-40ABC5567812",
+    To: "you@isp.com",
+    From: email,
+    Subject: "Message from " + name,
+    Body: message,
+  }).then((message) => alert("Message sent successfully"));
+}
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+  sendEmail(name, email, message);
+  form.reset();
 });
 
